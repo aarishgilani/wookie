@@ -8,7 +8,7 @@ function base_path($path) {
 }
 
 function dd($var) {
-    
+
     var_dump($var);
 
     die();
