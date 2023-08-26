@@ -5,7 +5,7 @@ $heading = "Notes";
 $db = new Database();
 
 $notes = $db->query('select * from notes');
-$notes = $notes->findOrFail();
+$notes = $notes->findAllOrFail();
 
 
 
