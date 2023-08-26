@@ -1,7 +1,7 @@
 <?php
 
 return [
-    '/' => 'views/home.view.php',
+    '/' => 'controllers/home.php',
     '/about' => 'views/about.view.php',
     '/notes' => 'views/notes.view.php',
     '/note' => 'views/note.view.php',
