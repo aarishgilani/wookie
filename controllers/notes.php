@@ -1,11 +1,13 @@
 <?php
 
-$heading = "Notes";
+$heading = "Notes";  
 
 $db = new Database();
 
-$notes = $db->query('select * from notes where id=3');
+$notes = $db->query('select * from notes');
 $notes = $notes->findOrFail();
+
+
 
 
 view('notes', [

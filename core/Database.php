@@ -23,9 +23,9 @@ class Database {
 
     }
     
-    public function findOrFail()
+    public function findOrFail($type = PDO::FETCH_ASSOC)
     {
-        $result = $this->statement->fetchAll(PDO::FETCH_ASSOC);
+        $result = $this->statement->fetchAll($type);
 
         if(! empty($result)) {
             return $result;
