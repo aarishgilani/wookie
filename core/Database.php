@@ -3,6 +3,7 @@
 class Database {
      
     public $connection;
+    public $statement;
 
     public function __construct()
     {
@@ -11,12 +12,28 @@ class Database {
         $this->connection = new PDO($dsn, 'root', '');
     }
 
-    public function query()
+    public function query($query)
     {
-        $statement = $this->connection->prepare('select * from notes');
-        $statement->execute();
 
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        $this->statement = $this->connection->prepare($query);
+
+        $this->statement->execute();
+
+        return $this;
+
     }
     
+    public function findOrFail()
+    {
+        $result = $this->statement->fetchAll(PDO::FETCH_ASSOC);
+
+        if(! empty($result)) {
+            return $result;
+        }
+        else {
+            return array( ['note' => 'Data not found, check execution query.'] );
+        }
+            
+    }
+
 }
