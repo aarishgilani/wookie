@@ -36,3 +36,19 @@ function url($path) {
     }
 
 }
+
+function pageTitle() {
+
+    global $url;
+
+    if($url === '/'){
+        return "Home";
+    }
+
+    $url = str_replace('/', '', $url);
+
+    $url = ucwords($url);
+
+    return $url;
+
+}
