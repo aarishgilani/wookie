@@ -13,3 +13,8 @@ function base_path($path) {
 
     return $base_path . $path;
 }
+
+function view($name, $attributes) {
+    extract($attributes);
+    return require base_path("views/{$name}.view.php");
+}

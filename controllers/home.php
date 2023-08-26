@@ -2,4 +2,6 @@
 
 $heading = 'Home';
 
-require base_path('views/home.view.php');
+view('home', [
+    'heading' => 'Home'
+]);
