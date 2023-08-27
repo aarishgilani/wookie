@@ -7,7 +7,11 @@ class Router {
     public function add($method, $controller, $url)
     {
 
-        $this->routes[] = compact($method, $url, $controller);
+        $this->routes[] = [
+            'url' => $url,
+            'controller' => $controller,
+            'method' => $method
+        ];
 
     }
 
@@ -46,14 +50,26 @@ class Router {
         
     }
 
+    public function route($url, $method)
+    {
+
+        foreach($this->routes as $route)
+        {
+            if( $url === $route['url'] && $method === $route['method'] ) {
+                return require base_path($route['controller']) ;
+            }
+        }
+
+    }
+
     protected function abort($code = 404)
     {
 
-        //add view redirection here
+        // add view redirection here
 
         http_response_code($code);
 
         exit();
     }
-    
+
 }
