@@ -2,6 +2,4 @@
 
 $heading = 'Home';
 
-view('home', [
-    'heading' => 'Home'
-]);
+view('home');

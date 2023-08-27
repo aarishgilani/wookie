@@ -1,3 +1,2 @@
-<?php include('header.view.php') ?>
-
-<h1 class="font-bold text-4xl m-10">Contact</h1>
+<?php require 'partials/nav.view.php' ?>
+<?php require 'partials/header.view.php' ?>
