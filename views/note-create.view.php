@@ -1,4 +1,4 @@
-<?php include('header.view.php') ?>
+<?php require 'partials/nav.view.php' ?>
 
 <style>
     input:where(:not([type])):focus, textarea:where(:not([type])):focus{
@@ -10,7 +10,7 @@
 <form method="POST">
 
     <div class="flex justify-between items-center">
-        <input name="title" id="title" class="font-bold focus:outline-none  border-none text-4xl my-10 focus:shadow-inherit" value="<?= $heading ?>" />
+        <input name="title" id="title" class="text-indigo-900 font-bold focus:outline-none  border-none text-4xl my-10 focus:shadow-inherit" value="<?= $heading ?>" />
         <button type="submit" class="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
     </div>
     
