@@ -1,3 +1,10 @@
-<?php include('header.view.php') ?>
+<!-- About -->
+<?php require 'partials/nav.view.php' ?>
+<?php require 'partials/header.view.php' ?>
 
-<h1 class="font-bold text-4xl m-10">About</h1>
+
+
+
+    
+
+

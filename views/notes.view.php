@@ -1,10 +1,16 @@
-<?php include('header.view.php') ?>
+<?php require 'partials/nav.view.php' ?>
+<?php require 'partials/header.view.php' ?>
 
-<div class="m-10">
+<!--
+  Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
+  Read the documentation to get started: https://tailwindui.com/documentation
+-->
 
-    <section class="flex justify-between items-center">
 
-        <h1 class="font-bold text-4xl my-8">Notes</h1>
+
+<div class="max-w-8xl mx-auto">
+
+    <section class="flex justify-end items-center px-36">
 
         <a href="/note-create">
 
@@ -27,13 +33,31 @@
 
     </section>
     
-
+    <ul class="px-36 mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
     <?php foreach($notes as $note): ?>
-
-        <li>
-            <a href="/note?id=<?=$note['id']?>" class="my-3 text-blue-500 hover:underline"><?= $note['note'] ?></a>
-        </li>
-
+        
+            <a href="/note?id=<?=$note['id']?>" class="my-3 text-blue-500 hover:underline">
+            <li class="col-span-1 bg-white rounded-lg shadow">
+                <div class="w-full flex items-center justify-between p-6 space-x-6">
+                <div class="flex-1 truncate">
+                    <div class="flex items-center space-x-3">
+                    <h3 class="text-gray-900 text-sm leading-5 font-medium truncate"> <?= $note['title'] ?> </h3>
+                    <span class="flex-shrink-0 inline-block px-2 py-0.5 text-teal-800 text-xs leading-4 font-medium bg-teal-100 rounded-full">Category</span>
+                    </div>
+                    <p class="mt-1 text-gray-500 text-sm leading-5 truncate">Date Created Date Updated</p>
+                </div>      
+                </div>
+                <div class="border-t p-6 border-gray-200">
+                <div class="-mt-px flex">
+                    
+                <p><?= $note['note'] ?></p>
+                    
+                </div>
+                </div>
+            </li>
+            </a>
+        
     <?php endforeach; ?>
+    </ul>
 
 </div>
