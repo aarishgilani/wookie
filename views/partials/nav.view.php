@@ -9,7 +9,7 @@
               <div class="flex">
                 <a href="/" class="rounded-md <?php if( url('/') ): ?> bg-indigo-900 <?php endif; ?> py-2 px-3 text-sm leading-5 font-medium text-white hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700 transition duration-150 ease-in-out">Home</a>
                 <a href="/about" class="ml-4 rounded-md <?php if( url('/about') ): ?> bg-indigo-900 <?php endif; ?> py-2 px-3 text-sm leading-5 font-medium text-white hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700 transition duration-150 ease-in-out">About</a>
-                <a href="/notes" class="ml-4 rounded-md <?php if( url('/notes') ): ?> bg-indigo-900 <?php endif; ?> py-2 px-3 text-sm leading-5 font-medium text-white hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700 transition duration-150 ease-in-out">Notes</a>
+                <a href="/notes" class="ml-4 rounded-md <?php if( url('/notes') || url('/note') ): ?> bg-indigo-900 <?php endif; ?> py-2 px-3 text-sm leading-5 font-medium text-white hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700 transition duration-150 ease-in-out">Notes</a>
                 <a href="/contact" class="ml-4 rounded-md <?php if( url('/contact') ): ?> bg-indigo-900 <?php endif; ?> py-2 px-3 text-sm leading-5 font-medium text-white hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700 transition duration-150 ease-in-out">Contact</a>
               </div>
             </div>

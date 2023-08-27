@@ -42,7 +42,9 @@
                 <div class="flex-1 truncate">
                     <div class="flex items-center space-x-3">
                     <h3 class="text-gray-900 text-sm leading-5 font-medium truncate"> <?= $note['title'] ?> </h3>
-                    <span class="flex-shrink-0 inline-block px-2 py-0.5 text-teal-800 text-xs leading-4 font-medium bg-teal-100 rounded-full">Category</span>
+                    <?php if( isset($note['category']) && !empty($note['category']) ): ?>
+                    <span class="flex-shrink-0 inline-block px-2 py-0.5 text-teal-800 text-xs leading-4 font-medium bg-teal-100 rounded-full"><?= $note['category'] ?></span>
+                    <?php endif; ?>
                     </div>
                     <p class="mt-1 text-gray-500 text-sm leading-5 truncate">Date Created Date Updated</p>
                 </div>      
