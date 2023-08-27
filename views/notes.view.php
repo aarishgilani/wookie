@@ -12,7 +12,7 @@
 
     <section class="flex justify-end items-center px-36">
 
-        <a href="/note-create">
+        <a href="/notes/create">
 
             <span class="inline-flex rounded-md shadow-sm max-h-16">
 

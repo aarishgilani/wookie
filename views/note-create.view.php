@@ -7,7 +7,7 @@
 </style>
 
 <div class="max-w-3xl mx-auto">
-<form method="POST">
+<form action="/notes/create" method="POST">
 
     <div class="flex justify-between items-center">
         <input name="title" id="title" class="text-indigo-900 font-bold focus:outline-none  border-none text-4xl my-10 focus:shadow-inherit" value="<?= $heading ?>" />
