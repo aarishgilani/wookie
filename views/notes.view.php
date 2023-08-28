@@ -52,7 +52,7 @@
                 <div class="border-t p-6 border-gray-200">
                 <div class="-mt-px flex">
                     
-                <p><?= $note['note'] ?></p>
+                <p><?= substr($note['note'], 0, 150).'...' ?></p>
                     
                 </div>
                 </div>
