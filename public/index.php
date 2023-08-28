@@ -17,7 +17,11 @@ $uri = parse_url( $_SERVER['REQUEST_URI'] );
 
 $url = $uri['path'];
 
-$method = $_SERVER['REQUEST_METHOD'];
+if( isset($_POST['_method']) && !empty($_POST['_method']) ){
+    $method = $_POST['_method'];
+} else {
+    $method = $_SERVER['REQUEST_METHOD'];
+}
 
 $router->route($url, $method);
 
