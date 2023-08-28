@@ -1,4 +1,4 @@
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
 <?php
 
 $base_path = __DIR__ . '/../';
