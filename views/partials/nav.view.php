@@ -3,7 +3,7 @@
         <div class="relative h-16 flex items-center justify-between lg:border-b lg:border-indigo-400 lg:border-opacity-25">
           <div class="px-2 flex items-center lg:px-0">
             <div class="flex-shrink-0">
-              <img class="block h-8 w-auto" src="https://tailwindui.com/img/logos/v1/workflow-mark-indigo-300.svg" alt="Workflow">
+              <?php icon('wookie', ['class' => 'text-white', 'size' => '35pt']) ?>
             </div>
             <div class="hidden lg:block lg:ml-6">
               <div class="flex">

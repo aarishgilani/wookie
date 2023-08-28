@@ -5,7 +5,8 @@
       <div class="lg:grid lg:grid-cols-12 lg:gap-8">
         <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
           <div class="text-sm font-semibold uppercase tracking-wide text-gray-500 sm:text-base lg:text-sm xl:text-base">
-            Coming soon
+            <?php include 'icons/wookie.view.php' ?>
+            Wookie coming soon
           </div>
           <h2 class="mt-1 text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:leading-none sm:text-6xl lg:text-5xl xl:text-6xl">
             Organize your

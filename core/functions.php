@@ -24,6 +24,14 @@ function view($name, $attributes = []) {
 
 }
 
+function icon($name, $attributes = []) {
+
+    extract($attributes);
+
+    return include base_path("views/icons/{$name}.view.php");
+
+}
+
 function url($path) {
 
     global $url;
