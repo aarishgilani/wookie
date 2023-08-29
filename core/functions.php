@@ -32,6 +32,13 @@ function icon($name, $attributes = []) {
 
 }
 
+function component($component, $attributes = ['name' => 'button', 'id' => 'button', 'type' => 'submit']) {
+
+    extract($attributes);
+
+    return include base_path("views/components/{$component}.view.php");
+}
+
 function url($path) {
 
     global $url;

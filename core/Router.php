@@ -46,7 +46,7 @@ class Router {
     public function put($url, $controller)
     {
 
-        $this->add('PATCH', $controller, $url);
+        $this->add('PUT', $controller, $url);
         
     }
 
