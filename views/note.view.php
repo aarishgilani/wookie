@@ -17,15 +17,26 @@
         </section>
       </a>
 
-      <form method="POST" action="/notes" aria-label="Back to notes" class="hover:underline">
-        <div>
-          <input type="hidden" name="id" id="id" value=<?= $note['id'] ?> >
-          <input type="hidden" name="_method" value="DELETE"/>
-          <button name="Delete" id="delete" type="submit" class="inline-flex items-center justify-center px-4 py-2 border border-transparent font-medium rounded-md text-red-700 bg-red-100 hover:bg-red-50 focus:outline-none focus:border-red-300 focus:shadow-outline-red active:bg-red-200 transition ease-in-out duration-150 sm:text-sm sm:leading-5">
-            Delete note
+      <section class="inline-flex gap-3">
+
+        <a href=<?= "/note/edit?id={$note['id']}" ?> >
+          <button name="Update" type="button" class="inline-flex items-center justify-center px-4 py-2 border border-transparent font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-red-50 focus:outline-none focus:border-red-300 focus:shadow-outline-red active:bg-indigo-200 transition ease-in-out duration-150 sm:text-sm sm:leading-5">
+            Update note
           </button>
-        </div>
-      </form>
+        </a>
+
+        <form method="POST" action="/notes" aria-label="Back to notes" class="hover:underline">
+          <div>
+            <input type="hidden" name="id" id="id" value=<?= $note['id'] ?> >
+            <input type="hidden" name="_method" value="DELETE"/>
+            <button name="Delete" id="delete" type="submit" class="inline-flex items-center justify-center px-4 py-2 border border-transparent font-medium rounded-md text-red-700 bg-red-100 hover:bg-red-50 focus:outline-none focus:border-red-300 focus:shadow-outline-red active:bg-red-200 transition ease-in-out duration-150 sm:text-sm sm:leading-5">
+              Delete note
+            </button>
+          </div>
+        </form>
+        
+      </section>
+
     </section>
 
     <?php if( isset($note['category']) && !empty($note['category']) ): ?>
