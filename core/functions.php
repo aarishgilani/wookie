@@ -16,27 +16,34 @@ function base_path($path) {
 
 }
 
-function view($name, $attributes = []) {
+function makeView($type, $name, $attributes) {
 
     extract($attributes);
+    return require base_path("{$type}/{$name}.view.php");
 
-    return require base_path("views/{$name}.view.php");
+}
+
+function view($name, $attributes = []) {
+
+    makeView('views', $name, $attributes);
+
+}
+
+function partial($name, $attributes = []) {
+
+    makeView('views/partials', $name, $attributes);
 
 }
 
 function icon($name, $attributes = []) {
 
-    extract($attributes);
-
-    return include base_path("views/icons/{$name}.view.php");
+    makeView('views/icons', $name, $attributes);
 
 }
 
 function component($component, $attributes = ['name' => 'button', 'id' => 'button', 'type' => 'submit']) {
 
-    extract($attributes);
-
-    return include base_path("views/components/{$component}.view.php");
+    makeView('components', $component, $attributes);
 }
 
 function url($path) {
