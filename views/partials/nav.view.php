@@ -14,7 +14,7 @@
           </div>
         </div>
       </div>
-      <?php if(isset($_SESSION['logged_in'])): ?>
+      <?php if (isset($_SESSION['logged_in'])) : ?>
         <div class="flex-1 px-2 flex justify-center lg:ml-6 lg:justify-end">
           <div class="max-w-lg w-full lg:max-w-xs">
             <label for="search" class="sr-only">Search</label>
@@ -91,6 +91,18 @@
             </div>
           </div>
         </div>
+      <?php else : ?>
+        <section class="inline-flex gap-5">
+
+          <a href="/register" class="block w-full px-5 py-3 rounded-md text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100 hover:text-indigo-700 focus:outline-none focus:bg-gray-100 focus:text-indigo-700 transition duration-150 ease-in-out" role="menuitem">
+            Register
+          </a>
+
+          <a href="/login" class="block w-full px-5 py-3 rounded-md text-center font-medium text-white bg-violet-500 hover:bg-indigo-500 focus:outline-none focus:bg-gray-100 focus:text-indigo-700 transition duration-150 ease-in-out" role="menuitem">
+            Log In
+          </a>
+
+        </section>
       <?php endif; ?>
     </div>
   </div>

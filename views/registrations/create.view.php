@@ -2,6 +2,8 @@
 
 <div class="bg-white sm:max-w-md sm:w-full sm:mx-auto sm:rounded-lg sm:overflow-hidden mt-36">
 
+  <?php icon('wookie', ['class' => 'text-indigo-500 mx-auto', 'size' => '250']) ?>
+
   <div class="mt-6">
     <form action="/register" method="POST" class="space-y-6">
       <div>
