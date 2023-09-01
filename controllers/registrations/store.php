@@ -10,7 +10,7 @@ $user = $dd->query('select email from users where email = :email', [
 // check if user exisits
 if(!isset($user['error'])) {
 
-    header('location: /');
+    header('location: /login');
 
     exit();
 
