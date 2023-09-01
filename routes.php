@@ -27,5 +27,6 @@ $router->get('/register', 'controllers/registrations/create.php');
 $router->post('/register', 'controllers/registrations/store.php');
 
 $router->get('/login', 'controllers/session/login.php');
+$router->post('/login', 'controllers/session/auth.php');
 
 $router->get('/contact', 'controllers/contact.php');

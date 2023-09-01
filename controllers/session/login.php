@@ -1,3 +1,5 @@
 <?php
 
-view('session/form');
+view('session/form', [
+    'errors' => $_SESSION['_flash']['errors'] ?? NULL
+]);

@@ -12,6 +12,10 @@ if(!isset($user['error'])) {
 
     header('location: /login');
 
+    // pass a banner notifying user that they already have an account
+    // following PRG pattern flashing session here
+    $_SESSION['_flash']['errors'] = 'Account already exists, please log in.';
+
     exit();
 
 } else {
