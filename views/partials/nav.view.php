@@ -91,7 +91,7 @@
             </div>
           </div>
         </div>
-      <?php else : ?>
+      <?php else: ?>
         <section class="inline-flex gap-5">
 
           <a href="/register" class="block w-full px-5 py-3 rounded-md text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100 hover:text-indigo-700 focus:outline-none focus:bg-gray-100 focus:text-indigo-700 transition duration-150 ease-in-out" role="menuitem">
