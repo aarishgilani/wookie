@@ -1,3 +1,5 @@
 <?php
 
-view('registrations/create');
+view('registrations/create', [
+    'errors' => Session::get('errors')
+]);
