@@ -14,7 +14,7 @@
           </div>
         </div>
       </div>
-      <?php if ($_SESSION['logged_in'] ?? false) : ?>
+      <?php if (isset($_SESSION['logged_in'])) : ?>
         <div class="flex-1 px-2 flex justify-center lg:ml-6 lg:justify-end">
           <div class="max-w-lg w-full lg:max-w-xs">
             <label for="search" class="sr-only">Search</label>
