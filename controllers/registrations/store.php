@@ -8,7 +8,7 @@ $user = $dd->query('select email from users where email = :email', [
 ])->findOrFail();
 
 // check if user exisits
-if(!isset($user['error'])) {
+if($user) {
 
     header('location: /login');
 
@@ -18,24 +18,27 @@ if(!isset($user['error'])) {
 
     exit();
 
-} else {
+}
 
-    $dd->query("insert into users ( name, email, password ) values (:name, :email, :password)", [
-        ':name' => $_POST['name'],
-        ':email' => $_POST['email'],
-        ':password' => $_POST['password']
-    ]);
+if($_POST['password'] !== $_POST['confirm-password']) {
 
-    $_SESSION['name'] = $_POST['name'];
-    $_SESSION['logged_in'] = true;
+    Session::flash('errors', 'Password confirmation does not match.');
 
-
-    header('location: /notes');
-
+    header('location: /register');
     exit();
 
 }
 
-// if exists re direct to homepage
+$dd->query("insert into users ( name, email, password ) values (:name, :email, :password)", [
+    ':name' => $_POST['name'],
+    ':email' => $_POST['email'],
+    ':password' => $_POST['password']
+]);
 
-// if does not exist create one and log him in
+Session::put('name', $_POST['name']);
+Session::put('logged_in', true);
+
+
+header('location: /notes');
+
+exit();
