@@ -8,13 +8,13 @@ $db = new Database;
 $user = $db->query('select * from users where email = :email and password = :password', [
     ':email' => $_POST['email'],
     ':password' => $password = $_POST['password']
-])->findAllOrFail();
+])->findOrFail();
 
 if($user) {
 
-    $_SESSION['logged_in'] === true;
-    $_SESSION['email'] === $user['email'];
-    $_SESSION['name'] === $user['name'];
+    Session::put('logged_in', true);
+    Session::put('email', $user['email']);
+    Session::put('name', $user['name']);
 
     header('location: /notes');
 
