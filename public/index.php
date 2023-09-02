@@ -29,6 +29,10 @@ if( isset($_POST['_method']) && !empty($_POST['_method']) ){
 $router->route($url, $method);
 
 
+Session::unflash();
+
+
+
 
 
 

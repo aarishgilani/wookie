@@ -45,7 +45,7 @@ class Database {
             return $result;
         }
         else{
-            return ['error' => 'Query execution failed, check Database class'];
+            return false;
         }
     }
 
