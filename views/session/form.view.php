@@ -1,6 +1,5 @@
-<?php partial('nav') ?>
 
-<?php if($errors ?? false): ?>
+<?php if($errors): ?>
 <div class="flex items-center gap-x-6 bg-indigo-600 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
   <p class="text-sm leading-6 text-white">
     <a href="#">
@@ -16,10 +15,10 @@
     </button>
   </div>
 </div>
-<?php unset($_SESSION['_flash']['errors']); endif; ?>
+<?php endif; ?>
 
 
-<div class="flex min-h-full -mt-16 flex-col justify-center px-6 py-12 lg:px-8">
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
   <div class="sm:mx-auto sm:w-full sm:max-w-sm">
     <span class="text-center flex justify-center">
         <?php icon('wookie') ?>
@@ -56,7 +55,7 @@
 
     <p class="mt-10 text-center text-sm text-gray-500">
       Don't have an account?
-      <a href="#" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Sign up here</a>
+      <a href="/register" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Sign up here</a>
     </p>
     <p class="mt-10 text-center text-sm text-gray-500">
         Crafted with passion by <a class="font-semibold text-indigo-600 hover:text-indigo-500" target="_blank" href="https://aarishgilani.com"> Aarish </a>
