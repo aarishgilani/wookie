@@ -1,6 +1,10 @@
 <?php 
 
 // connect to database
+
+use Core\Database;
+use Core\Session;
+
 $dd = new Database();
 
 $user = $dd->query('select email from users where email = :email', [
@@ -32,10 +36,11 @@ if($_POST['password'] !== $_POST['confirm-password']) {
 $dd->query("insert into users ( name, email, password ) values (:name, :email, :password)", [
     ':name' => $_POST['name'],
     ':email' => $_POST['email'],
-    ':password' => $_POST['password']
+    ':password' => password_hash($_POST['password'], PASSWORD_BCRYPT)
 ]);
 
 Session::put('name', $_POST['name']);
+Session::put('email', $_POST['email']);
 Session::put('logged_in', true);
 
 

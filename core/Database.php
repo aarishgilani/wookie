@@ -1,5 +1,9 @@
 <?php
 
+namespace Core;
+
+use PDO;
+
 class Database {
      
     public $connection;
@@ -7,9 +11,9 @@ class Database {
 
     public function __construct()
     {
-        $dsn = 'mysql:host=localhost;port=3306;dbname=wookie;charset=utf8mb4';
+        $dsn = 'mysql:host=170.187.181.40;port=3306;dbname=wookie;charset=utf8mb4';
 
-        $this->connection = new PDO($dsn, 'root', '');
+        $this->connection = new PDO($dsn, 'agilani', 'WookieAarish#786');
     }
 
     public function query($query, $param=[])
