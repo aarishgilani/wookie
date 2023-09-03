@@ -1,69 +1,73 @@
 <?php
 
-function dd($var) {
+function dd($var)
+{
+    echo '<pre>';
 
     var_dump($var);
 
     die();
 
+    echo '</pre>';
 }
 
-function base_path($path) {
+function base_path($path)
+{
 
     global $base_path;
 
     return $base_path . $path;
-
 }
 
-function makeView($type, $name, $attributes) {
+function makeView($type, $name, $attributes)
+{
 
     extract($attributes);
     return require base_path("{$type}/{$name}.view.php");
-
 }
 
-function view($name, $attributes = []) {
+function view($name, $attributes = [])
+{
 
     makeView('views', $name, $attributes);
-
 }
 
-function partial($name, $attributes = []) {
+function partial($name, $attributes = [])
+{
 
     makeView('views/partials', $name, $attributes);
-
 }
 
-function icon($name, $attributes = []) {
+function icon($name, $attributes = [])
+{
 
     makeView('views/icons', $name, $attributes);
-
 }
 
-function component($component, $attributes = ['name' => 'button', 'id' => 'button', 'type' => 'submit']) {
+function component($component, $attributes = ['name' => 'button', 'id' => 'button', 'type' => 'submit'])
+{
 
     makeView('components', $component, $attributes);
 }
 
-function url($path) {
+function url($path)
+{
 
     global $url;
 
-    if($path === $url) {
+    if ($path === $url) {
         return true;
-    }
-    else {
+    } else {
         return false;
     }
-
 }
 
-function pageTitle() {
+function pageTitle()
+{
 
     global $url;
 
-    if($url === '/'){
+    if ($url === '/') {
         return "Home";
     }
 
@@ -72,5 +76,22 @@ function pageTitle() {
     $url = ucwords($url);
 
     return $url;
+}
 
+function abort($code)
+{
+
+    view('abort');
+
+    http_response_code($code);
+
+    exit();
+}
+
+function redirect($url)
+{
+
+    header("location: {$url}");
+
+    exit();
 }
