@@ -3,17 +3,19 @@
 // receiving some data in post global variable.
 // validate it against users table to find or fail the user account
 
+use Core\Database;
+use Core\Session;
+
 $db = new Database;
 
-$user = $db->query('select * from users where email = :email and password = :password', [
+$user = $db->query('select * from users where email = :email', [
     ':email' => $_POST['email'],
-    ':password' => $password = $_POST['password']
 ])->findOrFail();
 
 if($user) {
     
     // Login if password matches
-    if($user['password'] === $_POST['password']) {
+    if(password_verify($_POST['password'], $user['password'])) {
         Session::put('logged_in', true);
         Session::put('email', $user['email']);
         Session::put('name', $user['name']);
