@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class Session {
 
     public static function has($key) {
@@ -28,6 +30,14 @@ class Session {
 
         unset($_SESSION['_flash']);
         
+    }
+
+    public static function flush() {
+
+        session_destroy();
+
+        unset($_SESSION);
+
     }
 
     
