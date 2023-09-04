@@ -32,34 +32,37 @@
         </a>
 
     </section>
-    
-    <ul class="px-36 mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-    <?php foreach($notes as $note): ?>
-        
-            <a href="/note?id=<?=$note['id']?>" class="my-3 text-blue-500 hover:underline">
-            <li class="col-span-1 bg-white rounded-lg shadow">
-                <div class="w-full flex items-center justify-between p-6 space-x-6">
-                <div class="flex-1 truncate">
-                    <div class="flex items-center space-x-3">
-                    <h3 class="text-gray-900 text-sm leading-5 font-medium truncate"> <?= $note['title'] ?> </h3>
-                    <?php if( isset($note['category']) && !empty($note['category']) ): ?>
-                    <span class="flex-shrink-0 inline-block px-2 py-0.5 text-teal-800 text-xs leading-4 font-medium bg-teal-100 rounded-full"><?= $note['category'] ?></span>
-                    <?php endif; ?>
-                    </div>
-                    <p class="mt-1 text-gray-500 text-sm leading-5 truncate">Date Created Date Updated</p>
-                </div>      
-                </div>
-                <div class="border-t p-6 border-gray-200">
-                <div class="-mt-px flex">
-                    
-                <p><?= substr($note['note'], 0, 150).'...' ?></p>
-                    
-                </div>
-                </div>
-            </li>
-            </a>
-        
-    <?php endforeach; ?>
-    </ul>
+    <?php if ($notes) : ?>
+        <ul class="px-36 mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <?php foreach ($notes as $note) : ?>
+
+                <a href="/note?id=<?= $note['id'] ?>" class="my-3 text-blue-500 hover:underline">
+                    <li class="col-span-1 bg-white rounded-lg shadow">
+                        <div class="w-full flex items-center justify-between p-6 space-x-6">
+                            <div class="flex-1 truncate">
+                                <div class="flex items-center space-x-3">
+                                    <h3 class="text-gray-900 text-sm leading-5 font-medium truncate"> <?= $note['title'] ?> </h3>
+                                    <?php if (isset($note['category']) && !empty($note['category'])) : ?>
+                                        <span class="flex-shrink-0 inline-block px-2 py-0.5 text-teal-800 text-xs leading-4 font-medium bg-teal-100 rounded-full"><?= $note['category'] ?></span>
+                                    <?php endif; ?>
+                                </div>
+                                <p class="mt-1 text-gray-500 text-sm leading-5 truncate">Date Created Date Updated</p>
+                            </div>
+                        </div>
+                        <div class="border-t p-6 border-gray-200">
+                            <div class="-mt-px flex">
+
+                                <p><?= substr($note['note'], 0, 150) . '...' ?></p>
+
+                            </div>
+                        </div>
+                    </li>
+                </a>
+
+            <?php endforeach; ?>
+        </ul>
+    <?php else : ?>
+        <h1 class="text-3xl font-bold text-indigo-800 text-center mt-28"> Please create a note to get started </h1>
+    <?php endif; ?>
 
 </div>
