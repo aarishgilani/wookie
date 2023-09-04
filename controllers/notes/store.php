@@ -3,7 +3,11 @@
 use Core\Database;
 
 $db = new Database;
-$db->query('INSERT INTO `wookie`.`notes` (`note`, `user`, `title`) VALUES (?, 1, ?)', [$_POST['note'], $_POST['title']] );
+$db->query('INSERT INTO `wookie`.`notes` (`note`, `user_id`, `title`) VALUES (:body, :user_id, :title)', [
+    ':body' => $_POST['note'],
+    ':user_id' => $_SESSION['user_id'],
+    ':title' => $_POST['title']
+]);
 
 header('location: /notes');
 
