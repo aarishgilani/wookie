@@ -34,4 +34,4 @@ $router->get('/login', 'controllers/session/login.php')->only('guest');
 $router->post('/login', 'controllers/session/auth.php')->only('guest');
 $router->get('/logout', 'controllers/session/logout.php')->only('auth');
 
-$router->get('/contact', 'controllers/contact.php');
+$router->get('/projects', 'controllers/projects/index.php');

@@ -10,7 +10,7 @@
             <a href="/" class="rounded-md <?php if (url('/')) : ?> bg-indigo-900 <?php endif; ?> py-2 px-3 text-sm leading-5 font-medium text-white hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700 transition duration-150 ease-in-out">Home</a>
             <a href="/about" class="ml-4 rounded-md <?php if (url('/about')) : ?> bg-indigo-900 <?php endif; ?> py-2 px-3 text-sm leading-5 font-medium text-white hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700 transition duration-150 ease-in-out">About</a>
             <a href="/notes" class="ml-4 rounded-md <?php if (url('/notes') || url('/note')) : ?> bg-indigo-900 <?php endif; ?> py-2 px-3 text-sm leading-5 font-medium text-white hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700 transition duration-150 ease-in-out">Notes</a>
-            <a href="/contact" class="ml-4 rounded-md <?php if (url('/contact')) : ?> bg-indigo-900 <?php endif; ?> py-2 px-3 text-sm leading-5 font-medium text-white hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700 transition duration-150 ease-in-out">Contact</a>
+            <a href="/projects" class="ml-4 rounded-md <?php if (url('/projects')) : ?> bg-indigo-900 <?php endif; ?> py-2 px-3 text-sm leading-5 font-medium text-white hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700 transition duration-150 ease-in-out">Projects</a>
           </div>
         </div>
       </div>
@@ -67,7 +67,8 @@
               <div>
                 <button class="rounded-full flex text-sm text-white focus:outline-none focus:shadow-solid transition duration-150 ease-in-out" id="user-menu" aria-haspopup="true">
                   <span class="sr-only">Open profile menu</span>
-                  <img class="rounded-full h-8 w-8" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                  <?php $hash = md5($_SESSION['email']) ?>
+                  <img class="rounded-full h-8 w-8" src=<?= "https://www.gravatar.com/avatar/{$hash}?d=robohash"?> alt="">
                 </button>
               </div>
               <!--
