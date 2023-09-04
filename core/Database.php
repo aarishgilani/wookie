@@ -35,7 +35,7 @@ class Database {
             return $result;
         }
         else {
-            return array( ['note' => 'Data not found, check execution query.'] );
+            return false;
         }
             
     }
