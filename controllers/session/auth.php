@@ -18,6 +18,7 @@ if($user) {
     if(password_verify($_POST['password'], $user['password'])) {
         Session::put('logged_in', true);
         Session::put('email', $user['email']);
+        Session::put('user_id', $user['id']);
         Session::put('name', $user['name']);
 
         header('location: /notes');

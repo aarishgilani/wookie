@@ -41,6 +41,7 @@ $dd->query("insert into users ( name, email, password ) values (:name, :email, :
 
 Session::put('name', $_POST['name']);
 Session::put('email', $_POST['email']);
+Session::put('user_id', $user['id']);
 Session::put('logged_in', true);
 
 
