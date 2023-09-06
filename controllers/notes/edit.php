@@ -1,6 +1,8 @@
 <?php
 
-$db = new Database();
+use Core\Database;
+
+$db = new Database;
 
 $note = $db->query("select * from notes where id=?", [$_GET['id']])->findOrFail();
 
