@@ -35,3 +35,6 @@ $router->post('/login', 'controllers/session/auth.php')->only('guest');
 $router->get('/logout', 'controllers/session/logout.php')->only('auth');
 
 $router->get('/projects', 'controllers/projects/index.php');
+$router->get('/project', 'controllers/projects/show.php');
+$router->get('/projects/create', 'controllers/projects/create.php');
+$router->post('/projects', 'controllers/projects/store.php');
