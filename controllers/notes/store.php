@@ -9,6 +9,4 @@ $db->query('INSERT INTO `wookie`.`notes` (`note`, `user_id`, `title`) VALUES (:b
     ':title' => $_POST['title']
 ]);
 
-header('location: /notes');
-
-exit();
+redirect('/');
