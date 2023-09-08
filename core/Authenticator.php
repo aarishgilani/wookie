@@ -5,7 +5,12 @@ namespace Core;
 class Authenticator
 {
 
-    public function find($email)
+    public function exists($email)
+    {
+        return (bool) $this->find($email);
+    }
+
+    protected function find($email)
     {
         $db = new Database;
 

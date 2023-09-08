@@ -1,19 +1,12 @@
 <?php
 
-// connect to database
-
 use Core\Authenticator;
-use Core\Database;
 use Core\Session;
 
-$dd = new Database();
-
-$user = $dd->query('select email from users where email = :email', [
-    ':email' => $_POST['email']
-])->findOrFail();
+$auth = new Authenticator;
 
 // check if user exisits
-if ($user) {
+if ($auth->exists($_POST['email'])) {
 
     $_SESSION['_flash']['errors'] = 'Account already exists, please log in.';
 
@@ -34,6 +27,6 @@ $dd->query("insert into users ( name, email, password ) values (:name, :email, :
     ':password' => password_hash($_POST['password'], PASSWORD_BCRYPT)
 ]);
 
-if((new Authenticator)->attempt($_POST['email'], $_POST['password'])) {
+if ($auth->attempt($_POST['email'], $_POST['password'])) {
     redirect('/notes');
 }
